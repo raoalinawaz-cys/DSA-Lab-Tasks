@@ -27,7 +27,7 @@ void insertDataStart(node **head, int value)
     newnode->data = value;
     *head = newnode;
 }
-void insertNodeInTheEnd(node **head, int value)
+void insertNodeInTheEnd(node *head, int value)
 {
     node *newnode;
     newnode = new node();
@@ -35,7 +35,7 @@ void insertNodeInTheEnd(node **head, int value)
     newnode->next = NULL;
 
     node *temp;
-    temp = *head;
+    temp = head;
     while (temp->next != NULL)
     {
         temp = temp->next;
@@ -86,24 +86,28 @@ void updataData(node *head, int value, int data)
         }
     }
 }
+void insertData(node *head, int data, int value)
+{
+	node *temp = head;
+	node *newnode = new node();
+	newnode -> data = value;
+	while(temp -> data != data)
+	{
+		temp = temp -> next;
+	}
+	newnode -> next = temp -> next;
+	temp -> next = newnode;
+	
+}
 int main()
 {
-    node *head, *middle, *last;
-    head = new node();
-    middle = new node();
-    last = new node();
-
-    head->data = 2;
-    middle->data = 4;
-    last->data = 5;
-
-    head->next = middle;
-    middle->next = last;
-    last->next = NULL;
-
-    insertDataStart(&head, 10);
-    insertNodeInTheEnd(&head, 20);
-    updataData(head, 2, 30);
-    deleteNode(&head, 20);
-    printLinkedList(head);
+    	node *head, *middle, *last;
+	head = new node();    
+	head->data = 2;
+	head -> next = NULL;
+	insertNodeInTheEnd(head, 3);
+	insertData(head, 2, 5);
+	insertData(head, 3, 9);
+	//deleteNode(&head, 2);
+	printLinkedList(head);
 }
