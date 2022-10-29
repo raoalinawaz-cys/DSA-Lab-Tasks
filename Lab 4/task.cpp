@@ -107,7 +107,9 @@ int main()
 	head -> next = NULL;
 	insertNodeInTheEnd(head, 3);
 	insertData(head, 2, 5);
-	insertData(head, 3, 9);
-	//deleteNode(&head, 2);
+	insertData(head, 5, 9);
+	insertNodeInTheEnd(head, 12);
+	deleteNode(&head, 2);
+	deleteNode(&head, 9);
 	printLinkedList(head);
 }
