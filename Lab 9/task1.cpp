@@ -32,6 +32,7 @@ public:
 		if (front == NULL && rear == NULL)
 		{
 			front = newnode;
+			rear = newnode;
 			return;
 		}
 		Node *temp = front;
@@ -54,7 +55,7 @@ public:
 	void displayQueue()
 	{
 		Node *temp = front;
-		if (front == NULL)
+		if (front == NULL && rear == NULL)
 		{
 			cout << "Queue is empty" << endl;
 			return;
