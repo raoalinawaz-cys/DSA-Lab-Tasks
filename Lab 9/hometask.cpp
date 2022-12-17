@@ -136,19 +136,6 @@ public:
 };
 int main()
 {
-    // Stack s;
-    // s.displayStack();
-    // s.push('c');
-    // s.pop();
-    // cout << endl;
-    // s.displayStack();
-    // cout << endl;
-    // Queue q;
-    // q.displayQueue();
-    // cout << endl;
-    // q.enqueue('f');
-    // q.dequeue();
-    // q.displayQueue();
     string s;
     Stack st;
     Queue q;
